@@ -7,8 +7,8 @@ public:
             if(count==0){
                 el = nums[i];
             }
-            // if(el == nums[i]) count++;
-            // else count--;
+            if(el == nums[i]) count++;
+            else count--;
         }
         return el;
     }
