@@ -12,37 +12,23 @@ class Solution {
 public:
     ListNode* removeNthFromEnd(ListNode* head, int n) {
           
-        if(head==NULL) {
-            cout<<"Err : List is empty"<<endl;
-            return head;
-        }
-        
-        if(n<=0) {
-            cout<<"Err : Number should be positive"<<endl;
-            return head;
-        }
-        
-        ListNode* fast = head;
-        ListNode* slow = head;
+       ListNode* dummy = new ListNode(-1);
+       dummy->next = head;
 
-        for (int i = 1; i <=n; i++) {
-            if(fast == NULL && i!=n-1) {
-                cout<<"Err : Number is greater than length of List"<<endl;
-                return head;
-            }
-            fast = fast->next;
-        }
+       ListNode* firstptr = dummy;
+       ListNode* secondptr = dummy;
 
-        if (fast == NULL) {
-            return head->next;
-        }
 
-        while (fast->next != NULL) {
-            fast = fast->next;
-            slow = slow->next;
-        }
-        slow->next = slow->next->next;
-        return head;
+       for(int i=0;i<n;i++){
+        secondptr= secondptr->next;
+       }
+
+       while(secondptr->next!=nullptr){
+        firstptr = firstptr->next;
+        secondptr = secondptr->next;
+       }
+
+       firstptr->next = firstptr->next->next;
+       return dummy->next;
     }
-    
 };
