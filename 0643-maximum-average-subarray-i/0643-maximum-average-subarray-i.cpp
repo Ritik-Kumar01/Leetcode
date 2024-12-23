@@ -11,16 +11,21 @@ public:
        int startIndex = 0;
        int endIndex = k;
 
-       while(endIndex<nums.size()){
+    //    while(endIndex<nums.size()){
               
-           sum -=nums[startIndex];
-           startIndex++;
+    //        sum -=nums[startIndex];
+    //        startIndex++;
 
-           sum +=nums[endIndex];
-           endIndex++;
+    //        sum +=nums[endIndex];
+    //        endIndex++;
 
-           maxsum = max(maxsum,sum);   
-       }
+    //        maxsum = max(maxsum,sum);   
+    //    }
+
+    for (int i = k; i < nums.size(); i++) {
+            sum = sum - nums[i - k] + nums[i];
+            maxsum = max(maxsum, sum);
+        }
 
      return (double) maxsum/k;
     }
