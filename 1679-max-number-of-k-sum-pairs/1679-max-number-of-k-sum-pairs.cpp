@@ -16,7 +16,7 @@ public:
         else if(nums[i]+nums[j]<k){
             i++;
         }
-        else{
+        else if(nums[i] + nums[j]>k){
             j--;
         }
        }
