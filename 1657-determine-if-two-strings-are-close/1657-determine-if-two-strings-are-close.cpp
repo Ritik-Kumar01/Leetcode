@@ -23,12 +23,14 @@ public:
           freq2[ind2]++;
         }
 
+         // 1 point - jo char freq1 me h, wo char freq2 me hona chiye
         for(int i=0;i<26;i++){
             if(freq1[i] != 0 && freq2[i] != 0) continue;
             if(freq1[i] == 0 && freq2[i] == 0) continue;
             return false;
         }
-
+         
+        // 2 point - to match frequency 
         sort(begin(freq1),end(freq1));
         sort(begin(freq2),end(freq2));
         return freq1==freq2;
