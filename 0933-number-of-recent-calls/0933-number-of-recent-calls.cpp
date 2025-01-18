@@ -1,11 +1,17 @@
 class RecentCounter {
 public:
-queue<int> q;
+     queue<int> q;
     RecentCounter() {
         
     }
     
     int ping(int t) {
+
+        if(q.size()==0){
+            q.push(t);
+            return 1;
+        }
+
           int margin = t - 3000;
         
         // Remove all elements from the queue that are less than margin
