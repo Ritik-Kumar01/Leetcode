@@ -22,7 +22,7 @@ public:
      ListNode* evenstart = even;
 
      while(even!=NULL && even->next!=NULL){
-        odd->next = even->next;
+        odd->next = odd->next->next;
         even->next = even->next->next;
 
         odd = odd->next;
