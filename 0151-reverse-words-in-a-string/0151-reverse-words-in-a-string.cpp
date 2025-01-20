@@ -1,11 +1,11 @@
 class Solution {
 public:
     string reverseWords(string s) {
-      int n =s.length();
+      int n = s.length();
       string ans = "";
 
       reverse(s.begin(),s.end());
-
+   
       for(int i=0;i<n;i++){
         string word = "";
 
@@ -15,7 +15,7 @@ public:
         }
 
         reverse(word.begin(),word.end());
-        if(word.length()>0){
+        if(word.length()){
             ans += " "+ word;
         }
       }
