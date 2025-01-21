@@ -21,7 +21,7 @@ public:
     }
 
     void countgoodnodes(TreeNode* root, int& count, int maxforthisstep){
-        if(root==NULL) return;
+        if(root==NULL) return 0;
 
         if(root->val >= maxforthisstep){
             count++;
