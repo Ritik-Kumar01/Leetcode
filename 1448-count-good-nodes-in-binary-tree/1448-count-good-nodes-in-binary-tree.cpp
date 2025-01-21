@@ -14,14 +14,14 @@ public:
     int goodNodes(TreeNode* root) {
         int count = 0;
         
-        if(root==NULL) return 0;
+        if(root==NULL) return count;
         countgoodnodes(root,count,root->val);
 
         return count;
     }
 
     void countgoodnodes(TreeNode* root, int& count, int maxforthisstep){
-        if(root==NULL) return 0;
+        if(root==NULL) return ;
 
         if(root->val >= maxforthisstep){
             count++;
