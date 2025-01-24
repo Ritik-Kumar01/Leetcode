@@ -24,7 +24,7 @@ public:
             root->left = deleteNode(root->left,key);
         }
         else{
-            if(!root->left && root->right){
+            if(!root->left && !root->right){
                 delete root;
                 return nullptr;
             }
