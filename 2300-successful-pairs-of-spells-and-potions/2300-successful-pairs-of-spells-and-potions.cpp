@@ -1,5 +1,25 @@
 class Solution {
 public:
+
+
+   int apnaLowerBound(int l, int h , vector<int> &potions,int minPotion){
+    int possibleindex = -1;
+    int mid = 0;
+
+    while(l<=h){
+        mid = l +(h-l)/2;
+
+        if(potions[mid]>=minPotion){
+            possibleindex = mid;
+            h = mid -1;
+        }
+        else{
+            l = mid +1;
+        }
+    }
+    return possibleindex;
+   }
+
     vector<int> successfulPairs(vector<int>& spells, vector<int>& potions, long long success) {
        
     //    int count = 0;
@@ -37,7 +57,8 @@ public:
             continue;
         }
 
-        int index = lower_bound(begin(potions),end(potions),minPotion) - begin(potions);
+        // int index = lower_bound(begin(potions),end(potions),minPotion) - begin(potions);
+        int index = apnaLowerBound(0,n-1, potions,minPotion);
 
         int count = n -index; 
         ans.push_back(count);
