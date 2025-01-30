@@ -9,22 +9,36 @@
  *     TreeNode(int x, TreeNode *left, TreeNode *right) : val(x), left(left), right(right) {}
  * };
  */
+// class Solution {
+//     int cnt=0;
+//     void solve(TreeNode* root){
+//          if(!root){
+//             return;
+//         }
+// cnt++;
+//         solve(root->left);
+//         solve(root->right);
+//     }
+// public:
+//     int countNodes(TreeNode* root) {
+        
+//         solve(root);
+//         return cnt;
+//     }
+// };
+
+
+
+
 class Solution {
-    int cnt=0;
-    void solve(TreeNode* root){
-         if(!root){
-            return;
-        }
-cnt++;
-        solve(root->left);
-        solve(root->right);
-    }
+ 
 public:
     int countNodes(TreeNode* root) {
-        
-        solve(root);
-       
+      
+      if(root==NULL){
+        return 0;
+      }
 
-        return cnt;
+      return 1+countNodes(root->left) + countNodes(root->right);
     }
 };
