@@ -12,8 +12,8 @@
 class Solution {
 public:
     TreeNode* buildBST(vector<int> &nums,int left,int right){
-      if (left > right) return nullptr; 
-
+   
+   if (left > right) return nullptr; 
         int mid = left + (right-left)/2;
 
         TreeNode* root = new TreeNode(nums[mid]);
