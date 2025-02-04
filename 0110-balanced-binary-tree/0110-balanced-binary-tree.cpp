@@ -20,7 +20,7 @@ public:
         int rightHeight = height(root->right);
         
         // If the subtree is unbalanced (difference in heights > 1), return -1
-        if ( abs(leftHeight - rightHeight) > 1) {
+        if (leftHeight == -1 || rightHeight == -1 || abs(leftHeight - rightHeight) > 1) {
             return -1;
         }
         
