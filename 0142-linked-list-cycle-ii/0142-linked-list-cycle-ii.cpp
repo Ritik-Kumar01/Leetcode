@@ -24,9 +24,9 @@ public:
             }
         }
 
-        if(fast==NULL || fast->next==NULL){ // Check for no cycle
-            return NULL;
-        }
+        // if(fast==NULL || fast->next==NULL){ // Check for no cycle
+        //     return NULL;
+        // }
 
         ListNode* P = head;
 
