@@ -29,7 +29,7 @@ public:
         string last = strs[strs.size()-1];
         string result = "";
 
-        for(int i=0;i<first.length();i++){
+        for(int i=0;i<last.length();i++){
               if(first[i]!=last[i]){
                 break;
               }
