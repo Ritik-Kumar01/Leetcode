@@ -4,9 +4,9 @@ class Solution {
         char [] schar=s.toCharArray();
         char [] tchar=t.toCharArray();
 
-        Arrays.sort(sChar);
-        Array.sort(tChar);
-        return Arrays.equals(sChar,tChar);
+        Arrays.sort(schar);
+        Arrays.sort(tchar);
+        return Arrays.equals(schar,tchar);
 
         
     }
