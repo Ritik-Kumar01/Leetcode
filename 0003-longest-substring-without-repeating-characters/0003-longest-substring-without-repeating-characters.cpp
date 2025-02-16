@@ -21,19 +21,21 @@ public:
         
         // return maxLength;
 
-         int hash[256] = {-1}; // Stores last occurrence of each character
+         int hash[256];  
+        fill(begin(hash), end(hash), -1);  // Properly initialize hash array
+
         int n = s.length();
         int l = 0;
         int r = 0;
         int maxlen = 0;
 
         while (r < n) {
-            if (hash[s[r]] != -1 && hash[s[r]] >= l) {
+            if (hash[s[r]] >= l) {
                 l = hash[s[r]] + 1;
             }
-            hash[s[r]] = r; // Update last occurrence
+            hash[s[r]] = r;  // Update last occurrence
             maxlen = max(maxlen, r - l + 1);
-            r++; // Increment r to move forward
+            r++;  // Increment r to move forward
         }
         return maxlen;
     }
