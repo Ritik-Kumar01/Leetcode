@@ -21,7 +21,8 @@ public:
         
         // return maxLength;
 
-         int hash[256] = {-1}; // Stores last occurrence of each character
+        int hash[256];  
+        fill(begin(hash), end(hash), -1);
         int n = s.length();
         int l = 0;
         int r = 0;
