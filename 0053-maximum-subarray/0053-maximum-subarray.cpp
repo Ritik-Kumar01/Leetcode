@@ -19,10 +19,8 @@ public:
 
         sum +=nums[i];
 
-        if(maxsum<sum){
-            maxsum = sum;
-        }
-
+        
+        maxsum = max(maxsum,sum);
         if(sum<0){
             sum = 0;
         }
