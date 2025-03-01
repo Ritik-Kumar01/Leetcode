@@ -1,30 +1,34 @@
 class Solution {
 public:
+    int solve(int j, int k , vector<int> &arr, unordered_map<int,int> &mp){
+        int target = arr[k] - arr[j];
+
+        if(mp.count(target) && mp[target]<j){
+            int i = mp[target];
+            return solve(i,j,arr,mp)+1;
+        }
+        return 2;
+    }
+
     int lenLongestFibSubseq(vector<int>& arr) {
         int n = arr.size();
-        // Store array elements in set for O(1) lookup
-        unordered_set<int> numSet(arr.begin(), arr.end());
+        unordered_map<int,int> mp;
 
-        int maxLen = 0;
-        // Try all possible first two numbers of sequence
-        for (int start = 0; start < n; ++start) {
-            for (int next = start + 1; next < n; ++next) {
-                // Start with first two numbers
-                int prev = arr[next];
-                int curr = arr[start] + arr[next];
-                int len = 2;
+        for(int i = 0; i<arr.size();i++){
+              mp[arr[i]] = i;
+        }
 
-                // Keep finding next Fibonacci number
-                while (numSet.find(curr) != numSet.end()) {
-                    // Update values for next iteration
-                    int temp = curr;
-                    curr += prev;
-                    prev = temp;
-                    maxLen = max(maxLen, ++len);
+        int max_length = 0 ;
+
+        for(int j = 1; j<n;j++){
+            for(int k = j+1; k<n;k++){
+                int length = solve(j,k,arr,mp);
+
+                if(length>=3){
+                    max_length = max(max_length,length);
                 }
             }
         }
-
-        return maxLen;
+        return max_length;
     }
 };
