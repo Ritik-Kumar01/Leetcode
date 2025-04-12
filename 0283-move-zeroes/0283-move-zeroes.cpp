@@ -15,23 +15,44 @@ public:
     //   }
 
 
-     vector<int> nonzero;
-     vector<int> zero;
+    //  vector<int> nonzero;
+    //  vector<int> zero;
 
-     for(int num : nums){
-      if(num != 0){
-        nonzero.push_back(num);
-      }
+    //  for(int num : nums){
+    //   if(num != 0){
+    //     nonzero.push_back(num);
+    //   }
 
-      else{
-        zero.push_back(num);
-      }
-     }
+    //   else{
+    //     zero.push_back(num);
+    //   }
+    //  }
 
+    // int index = 0;
+    // for(int num : nonzero){
+    //     nums[index++] = num;
+    // }
+    // for(int num : zero){
+    //     nums[index++] = num;
+    // }
+
+    vector<int> zero;
+    vector<int> nonzero;
+
+    for(int num : nums){
+        if(num!=0){
+            nonzero.push_back(num);
+        }
+        else{
+            zero.push_back(num);
+        }
+    }
+    
     int index = 0;
     for(int num : nonzero){
         nums[index++] = num;
     }
+
     for(int num : zero){
         nums[index++] = num;
     }
