@@ -63,17 +63,39 @@ public:
     //      return maxarea;
 
 
-    int i = 0; 
+    // int i = 0; 
+    // int maxarea = 0;
+    // int j = height.size()-1;
+
+    // while(i<j){
+    //     int width  = j -  i ;
+    //     int heightt = min(height[i],height[j]);
+
+    //     int area = width * heightt;
+
+    //     maxarea = max(maxarea,area);
+
+    //     if(height[i]>height[j]){
+    //         j--;
+    //     }
+    //     else{
+    //         i++;
+    //     }
+    // }
+    // return maxarea;
+
+
+    int i = 0 ; int j=height.size()-1;
     int maxarea = 0;
-    int j = height.size()-1;
 
     while(i<j){
-        int width  = j -  i ;
+        int width = j - i;
+
         int heightt = min(height[i],height[j]);
 
         int area = width * heightt;
 
-        maxarea = max(maxarea,area);
+        maxarea = max(area,maxarea);
 
         if(height[i]>height[j]){
             j--;
