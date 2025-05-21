@@ -40,26 +40,48 @@ public:
     // }
 
 
-    int i = 0 ;
+    // int i = 0 ;
+    // int j = height.size()-1;
+    // int maxarea  = 0;
+
+    // while(i<j){
+    //     int width = j - i;
+
+    //     int heightt = min(height[i],height[j]);
+
+    //     int area = heightt * width;
+
+    //      maxarea = max(maxarea,area);
+
+    //      if(height[i]>height[j]){
+    //         j--;
+    //      }
+    //      else{
+    //         i++;
+    //      }
+    // }
+    //      return maxarea;
+
+
+    int i = 0; 
+    int maxarea = 0;
     int j = height.size()-1;
-    int maxarea  = 0;
 
     while(i<j){
-        int width = j - i;
-
+        int width  = j -  i ;
         int heightt = min(height[i],height[j]);
 
-        int area = heightt * width;
+        int area = width * heightt;
 
-         maxarea = max(maxarea,area);
+        maxarea = max(maxarea,area);
 
-         if(height[i]>height[j]){
+        if(height[i]>height[j]){
             j--;
-         }
-         else{
+        }
+        else{
             i++;
-         }
+        }
     }
-         return maxarea;
+    return maxarea;
     }
 };
