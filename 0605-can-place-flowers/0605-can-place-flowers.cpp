@@ -2,27 +2,27 @@ class Solution {
 public:
     bool canPlaceFlowers(vector<int>& flowerbed, int n) {
        
-       int l = flowerbed.size();
-       if(n == 0){
-        return true;
-       }
+    //    int l = flowerbed.size();
+    //    if(n == 0){
+    //     return true;
+    //    }
 
-      for(int i=0; i<l; i++){
-       if(flowerbed[i]==0){
-        bool left = (i==0) || (flowerbed[i-1]==0);
-        bool right = (i== l-1) ||(flowerbed[i+1]==0);
+    //   for(int i=0; i<l; i++){
+    //    if(flowerbed[i]==0){
+    //     bool left = (i==0) || (flowerbed[i-1]==0);
+    //     bool right = (i== l-1) ||(flowerbed[i+1]==0);
            
-         if(left && right){
-            flowerbed[i]=1;
-            n--;
-         if(n==0)
-            return true;
+    //      if(left && right){
+    //         flowerbed[i]=1;
+    //         n--;
+    //      if(n==0)
+    //         return true;
          
-         }  
+    //      }  
 
-       }
-      }  
-       return false;
+    //    }
+    //   }  
+    //    return false;
 
     //    int l= flowerbed.size();
 
@@ -46,5 +46,27 @@ public:
     //    }
     //    }
     //    return false;
+
+    int l = flowerbed.size();
+
+    if(n==0){
+        return true;
+    }
+
+    for(int i = 0 ; i<l;i++){
+        if(flowerbed[i]==0){
+            int left = i==0 || flowerbed[i-1]==0;
+            int right = i==l-1 || flowerbed[i+1]==0;
+
+            if(left && right){
+                flowerbed[i]=1;
+                n--;
+            }
+            if(n==0){
+                return true;
+            }
+        }
+    }
+    return false;
     }    
 };
