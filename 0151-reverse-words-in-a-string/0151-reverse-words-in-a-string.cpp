@@ -44,22 +44,26 @@ public:
 //   return ans.substr(1);
 
 
-  int n = s.length();
-  string ans = "";
-  reverse(s.begin(),s.end());
+    int n = s.length();
 
-  for(int i=0;i<n;i++){
-    string words="";
+    string ans = "";
+    reverse(s.begin(),s.end());
 
-      while(i<n && s[i]!=' '){
-        words+=s[i];
-        i++;
-      }
-      reverse(words.begin(),words.end());
+    for(int i=0;i<n;i++){
+        string words = "";
 
-      if(words.length()>0){
-        ans+=" "+words;
-      }
-  }
-  return ans.substr(1);    }
+        while(i<n && s[i]!=' '){
+            words +=s[i];
+            i++;
+        }
+
+        reverse(words.begin(),words.end());
+
+        if(words.length()>0){
+            ans+=" "+words;
+        }
+    }
+
+    return ans.substr(1);
+    }
 };
