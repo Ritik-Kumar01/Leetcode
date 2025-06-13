@@ -30,39 +30,27 @@ public:
 
     // if we need to  print the full subarray
 
-    // int sum  = 0;
-    // int maxsum  = INT_MIN;
-    // int startindex = -1;
-    // int endindex = -1;
-    // for(int i = 0 ; i<nums.size();i++){
-    //  if(sum==0) start = i;
-    //     sum +=nums[i];
+    int sum  = 0;
+    int maxsum  = INT_MIN;
+    int startindex = -1;
+    int endindex = -1;
+    int start=0;
+    for(int i = 0 ; i<nums.size();i++){
+     if(sum==0) start = i;
+        sum +=nums[i];
 
         
-    //    if(maxsum<sum){
-    //     maxsum = sum;
-    //     startindex = start ; endindex = i;
-    //    }
-    //     if(sum<0){
-    //         sum = 0;
-    //     }
+       if(maxsum<sum){
+        maxsum = sum;
+        startindex = start ; endindex = i;
+       }
+        if(sum<0){
+            sum = 0;
+        }
 
-    // }
-    // return maxsum;
-
-    int sum = 0 ;
-    int maxsum = INT_MIN;
-
-    for(int i=0;i<nums.size();i++){
-        sum += nums[i];
-    maxsum = max(maxsum,sum);
-
-    if(sum<0){
-        sum = 0;
     }
-    }
+    return maxsum;
 
-
-   return maxsum;
+   
     }
 };
