@@ -27,8 +27,8 @@ public:
         for(int num : nums){
             int complement = k - num;
 
-            if(freq.find(complement)!=freq.end() && freq[complement]>0){
-                count++;
+            if(freq.find(complement)!=freq.end()){
+               count++;
                 freq[complement]--;
             }
            else{
