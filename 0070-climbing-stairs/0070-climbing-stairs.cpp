@@ -8,7 +8,7 @@ public:
         int first = 1,second =2 , result;
 
         for(int i=2 ;i<n;i++){
-            int result = first + second;
+            result = first + second;
             first = second;
             second = result;
         }
