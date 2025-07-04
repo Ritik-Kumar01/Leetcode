@@ -13,7 +13,8 @@ public:
             }
 
             else{
-                while(set.count(s[right])){
+                // while(set.count(s[right])){
+                    while(set.find(s[right])!= set.end()){
                     set.erase(s[left]);
                     left++;
                 }   
