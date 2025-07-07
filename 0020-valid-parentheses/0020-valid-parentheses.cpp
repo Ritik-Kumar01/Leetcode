@@ -18,9 +18,7 @@ public:
                 if(st.empty() || st.top()!=ch){
                     return false;
                 }
-                else{
-                    st.pop();
-                }
+               
             }
         }
         return st.empty();
