@@ -17,14 +17,14 @@ public:
         }
          int i = 0;
         for(int non:nonzero){
-            nums[i]= non;
-            i++;
+            nums[i++]= non;
+            
             
         }
 
         for(int ze : zero){
-            nums[i] = ze;
-            i++;
+            nums[i++] = ze;
+            
         }
         
     }
