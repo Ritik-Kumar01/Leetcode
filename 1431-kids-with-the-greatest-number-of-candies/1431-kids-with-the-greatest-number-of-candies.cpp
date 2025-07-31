@@ -27,17 +27,26 @@ public:
 
 
 
-        vector<bool> result;
+    //     vector<bool> result;
 
-        int maxcandie = *max_element(candies.begin(),candies.end());
+    //     int maxcandie = *max_element(candies.begin(),candies.end());
 
-        for(int i=0 ;i<candies.size();i++){
-            if(maxcandie<= candies[i]+extraCandies){
-                result.push_back(true);
-            }
-            else{
-            result.push_back(false);}
-        }
+    //     for(int i=0 ;i<candies.size();i++){
+    //         if(maxcandie<= candies[i]+extraCandies){
+    //             result.push_back(true);
+    //         }
+    //         else{
+    //         result.push_back(false);}
+    //     }
+    // return result;
+
+
+    vector<bool> result;
+    int maxcandies = *max_element(candies.begin(),candies.end());
+
+    for(int candy : candies){
+        result.push_back(maxcandies<=candy+extraCandies);
+    }
     return result;
     }
     
