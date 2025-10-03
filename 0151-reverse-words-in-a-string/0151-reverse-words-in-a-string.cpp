@@ -1,69 +1,24 @@
 class Solution {
 public:
     string reverseWords(string s) {
-    //   int n = s.length();
-    //   string ans = "";
+        int n = s.length();
+        reverse(s.begin(),s.end());
 
-    //   reverse(s.begin(),s.end());
-   
-    //   for(int i=0;i<n;i++){
-    //     string word = "";
+        string ans ="";
 
-    //     while(i<n && s[i]!=' '){
-    //         word +=s[i];
-    //         i++;
-    //     }
+        for(int i=0; i<n ;i++){
+            string word ="";
+            while(i<n && s[i]!=' '){
+                word +=  s[i];
+                i++;
+            }
 
-    //     reverse(word.begin(),word.end());
-    //     if(word.length()>0){
-    //         ans += " "+ word;
-    //     }
-    //   }
-    //   return ans.substr(1);
+            reverse(word.begin(),word.end());
 
-
-//     int n = s.length();
-//     string ans ="";
-//     reverse(s.begin(),s.end());
-
-//     for(int i = 0 ; i<n ; i++){
-//         string words = "";
-
-//         while(i<n && s[i]!=' '){
-//             words += s[i];
-//             i++;
-//         }  
-
-//         reverse(words.begin(),words.end());
-
-//         if(words.length()>0){
-//            ans +=" "+words;
-//         }
-//     }
-  
-//   return ans.substr(1);
-
-
-    int n = s.length();
-
-    string ans = "";
-    reverse(s.begin(),s.end());
-
-    for(int i=0;i<n;i++){
-        string words = "";
-
-        while(i<n && s[i]!=' '){
-            words +=s[i];
-            i++;
+            if(word.length()>0){
+                ans +=" "+word;
+            }
         }
-
-        reverse(words.begin(),words.end());
-
-        if(words.length()>0){
-            ans+=" "+words;
-        }
-    }
-
-    return ans.substr(1);
+        return ans.substr(1);
     }
 };
