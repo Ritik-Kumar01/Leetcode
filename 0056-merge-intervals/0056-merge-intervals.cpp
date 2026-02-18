@@ -36,11 +36,27 @@ public:
         // return interval;
 
 
+        // sort(intervals.begin(),intervals.end());
+
+        // vector<vector<int>> vec;
+
+        // for(auto inter : intervals){
+        //     if(vec.empty() || vec.back()[1]<inter[0]){
+        //         vec.push_back(inter);
+        //     }
+        //     else{
+        //         vec.back()[1] = max(vec.back()[1],inter[1]);
+        //     }
+        // }
+        // return vec;
+
+
         sort(intervals.begin(),intervals.end());
 
-        vector<vector<int>> vec;
+        vector<vector<int>>vec;
 
-        for(auto inter : intervals){
+        for(auto inter:intervals){
+
             if(vec.empty() || vec.back()[1]<inter[0]){
                 vec.push_back(inter);
             }
