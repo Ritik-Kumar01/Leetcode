@@ -2,18 +2,62 @@ class Solution {
 public:
     bool isPalindrome(string s) {
         
-      
-       int i = 0 ; int j= s.length()-1;
-       while(i<j){
-       if(!isalnum(s[i])){ i++; continue;}
-       if(!isalnum(s[j])){ j--; continue;}
+    //    int left = 0;
+    //    int right = s.size()-1;
 
-       if(tolower(s[i])!=tolower(s[j])){
-        return false;
+    //    while(left<right){
+
+    //      while(left<right && !isalnum(s[left])){
+    //         left++;
+    //      }
+    //      while(left<right && !isalnum(s[right])){
+    //         right--;
+    //      }
+
+    //      while(tolower(s[left])!= tolower(s[right])){
+    //         return false;
+    //      }
+    //      left++;
+    //      right--;}
+    //    return true;
+
+
+
+    // int left = 0;
+    // int right = s.size()-1;
+
+    // while(left<right){
+    //     while(left<right && !isalnum(s[left])){
+    //         left++;
+    //     }
+    //     while(left<right && !isalnum(s[right])){
+    //         right--;
+    //     }
+    //     if(tolower(s[left])!=tolower(s[right])){
+    //         return false;
+    //     }
+    //     left++;
+    //     right--;
+    // }
+    // return true;
+
+
+    int left = 0;
+    int right = s.size()-1;
+
+     while(left<right){
+        while(left<right && !isalnum(s[left])){
+            left++;
+        }
+        while(left<right && !isalnum(s[right])){
+            right--;
+        }
+        if(tolower(s[left])!=tolower(s[right])){
+            return false;
+        }
+        left++;
+        right--;
+     }
+     return true;
        }
-       i++;j--;
-         
-       }
-       return true;
-    }
 };
