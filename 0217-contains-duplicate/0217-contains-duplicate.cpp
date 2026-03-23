@@ -30,7 +30,7 @@ public:
         
 
 
-        unordered_set<int>st;
+        unordered_set<int> st;
 
         for(int x : nums){
             if(st.count(x)==0){
