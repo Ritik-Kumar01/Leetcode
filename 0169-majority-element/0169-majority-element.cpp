@@ -20,20 +20,41 @@ public:
         // }
         // return maxans;
 
-       unordered_map<int,int>mp;
-       int maxelement = INT_MIN;
+    //    unordered_map<int,int>mp;
+    //    int maxelement = INT_MIN;
 
-       for(int i=0;i<nums.size();i++){
+    //    for(int i=0;i<nums.size();i++){
+    //     mp[nums[i]]++;
+    //     maxelement = max(maxelement,mp[nums[i]]);
+    //    }
+    //  int maxans;
+    //    for(int i = 0 ; i<nums.size();i++){
+    //     if(maxelement==mp[nums[i]]){
+    //         maxans = nums[i];
+    //         break;
+    //     }
+    //    }
+    //    return maxans;
+
+
+
+    unordered_map<int,int> mp;
+    int maxelement = INT_MIN;
+
+    for(int i = 0 ; i<nums.size();i++){
+
         mp[nums[i]]++;
-        maxelement = max(maxelement,mp[nums[i]]);
-       }
-     int maxans;
-       for(int i = 0 ; i<nums.size();i++){
-        if(maxelement==mp[nums[i]]){
+        maxelement = max(maxelement , mp[nums[i]]);
+
+    }
+    int maxans;
+
+    for(int i=0;i<nums.size();i++){
+        if(maxelement == mp[nums[i]]){
             maxans = nums[i];
             break;
         }
-       }
-       return maxans;
+    }
+    return maxans;
     }
 };
